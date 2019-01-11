@@ -1,8 +1,11 @@
 import {
-    combineReducers
-} from 'redux';
-import movieReducer from './moviesReducer';
+  combineReducers
+} from "redux";
+import movieReducer from "./moviesReducer";
+import jumbotronReducer from "./jumbotronReducer"
+
 
 export default combineReducers({
-    movies: movieReducer
-})
+  movies: movieReducer,
+  jumbotron: jumbotronReducer
+});
