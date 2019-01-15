@@ -1,11 +1,50 @@
+body {
+  background: linear-gradient(to bottom, rgba(11, 16, 33, 1) 0%, rgba(14, 20, 40, 1) 51%, rgba(14, 20, 40, 1) 100%);
+}
+
 .movies-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center
+  justify-content: center;
+  color: white
 }
 
 .card {
   margin-bottom: 10px;
   margin-right: 10px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+
+  .card-img-top {
+    position: relative;
+  }
+
+  img {
+    border-radius: 5%;
+  }
+
+  span {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    background: rgb(254, 199, 42);
+    color: black;
+    padding: 3px 5px;
+    border-radius: 50%
+  }
+
+  .card-title {
+    margin-top: 10px;
+  }
+
+  h6 {
+    margin: 0;
+  }
+
+  p {
+    color: rgb(0, 153, 112);
+    margin: 0;
+    font-size: .8rem
+  }
 }

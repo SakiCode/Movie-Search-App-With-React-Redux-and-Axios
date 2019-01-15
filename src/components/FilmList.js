@@ -26,10 +26,12 @@ class FilmList extends React.Component {
               src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
               alt=""
             />
-            <div className="card-title">
-              <p> {movie.title} </p>{" "}
-            </div>{" "}
-          </div>{" "}
+            <span>☆{movie.vote_average}</span>
+          </div>
+          <div className="card-title">
+            <p>{movie.release_date}</p>
+            <h6> {movie.title} </h6>
+          </div>
         </div>
       );
     });
