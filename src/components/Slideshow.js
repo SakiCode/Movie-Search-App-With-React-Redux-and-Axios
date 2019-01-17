@@ -2,7 +2,7 @@ import React from "react";
 import { fetchPopularMovies } from "../actions";
 import { connect } from "react-redux";
 import Swiper from "swiper";
-import "../assets/css/jumbotron.scss";
+import "../assets/css/slideshow.scss";
 
 class Slideshow extends React.Component {
   componentDidMount = async () => {
