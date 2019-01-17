@@ -1,11 +1,11 @@
 import {
   combineReducers
 } from "redux";
-import movieReducer from "./moviesReducer";
-import jumbotronReducer from "./jumbotronReducer"
+import upcomingMoviesReducer from "./upcomingMoviesReducer";
+import popularMoviesReducer from "./popularMoviesReducer"
 
 
 export default combineReducers({
-  movies: movieReducer,
-  jumbotron: jumbotronReducer
+  slideshow: popularMoviesReducer,
+  upcoming: upcomingMoviesReducer
 });

@@ -1,15 +1,22 @@
 import React from "react";
-import FilmList from "../components/FilmList";
-import Jumbotron from "../components/Jumbotron";
+import UpcomingMovies from "./Upcoming";
 
 import "../assets/css/app.scss";
+import Slideshow from "./Slideshow";
 const App = () => {
   return (
     <>
-      <Jumbotron />
-      <div className="movies-container">
-        <FilmList />
-      </div>{" "}
+      <Slideshow />
+      <div className="container text-center">
+        <div
+          className="row"
+          style={{
+            justifyContent: "center"
+          }}
+        >
+          <UpcomingMovies />
+        </div>
+      </div>
     </>
   );
 };

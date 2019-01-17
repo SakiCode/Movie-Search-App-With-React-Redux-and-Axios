@@ -1,14 +1,17 @@
 import React from "react";
-import { fetchMovies } from "../actions";
+import { fetchPopularMovies } from "../actions";
 import { connect } from "react-redux";
 import Swiper from "swiper";
 import "../assets/css/jumbotron.scss";
 
-class Jumbotron extends React.Component {
+class Slideshow extends React.Component {
   componentDidMount = async () => {
-    this.props.fetchMovies();
+    this.props.fetchPopularMovies();
   };
+
   render() {
+    console.log(this.props.slideshow);
+
     (() => {
       const sliderEl = document.querySelectorAll(".swiper-container");
       if (!sliderEl) {
@@ -36,7 +39,7 @@ class Jumbotron extends React.Component {
         <div className="carousel-container" data-wow-duration="3s">
           <div className="swiper-container">
             <div className="swiper-wrapper">
-              {this.props.movies.map(movie => (
+              {this.props.slideshow.map(movie => (
                 <div
                   key={movie.id}
                   className="swiper-slide"
@@ -81,13 +84,13 @@ class Jumbotron extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    movies: state.movies
+    slideshow: state.slideshow
   };
 };
 
 export default connect(
   mapStateToProps,
   {
-    fetchMovies
+    fetchPopularMovies
   }
-)(Jumbotron);
+)(Slideshow);

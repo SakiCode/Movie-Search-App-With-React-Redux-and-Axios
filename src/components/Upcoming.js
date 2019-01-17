@@ -1,18 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchMovies } from "../actions";
+import { fetchUpcomingMovies } from "../actions";
 
-import "../assets/css/filmlist.scss";
+import "../assets/css/popular.scss";
 
-class FilmList extends React.Component {
+class UpcomingMovies extends React.Component {
   componentDidMount = async () => {
-    this.props.fetchMovies();
+    this.props.fetchUpcomingMovies();
   };
 
   render() {
-    console.log(this.props.movies);
-
-    return this.props.movies.map(movie => {
+    return this.props.upcoming.map(movie => {
       return (
         <div
           className="card"
@@ -26,11 +24,10 @@ class FilmList extends React.Component {
               src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
               alt=""
             />
-            <span>☆{movie.vote_average}</span>
+            <span> ☆{movie.vote_average} </span>
           </div>
           <div className="card-title">
-            <p>{movie.release_date}</p>
-            <h6> {movie.title} </h6>
+            <p> {movie.release_date}</p> <h6>{movie.title}</h6>
           </div>
         </div>
       );
@@ -40,13 +37,13 @@ class FilmList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    movies: state.movies
+    upcoming: state.upcoming
   };
 };
 
 export default connect(
   mapStateToProps,
   {
-    fetchMovies
+    fetchUpcomingMovies
   }
-)(FilmList);
+)(UpcomingMovies);
