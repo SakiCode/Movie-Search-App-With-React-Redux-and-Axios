@@ -1,4 +1,9 @@
 import movieApi from "../apis/movieapi";
+import {
+  FETCH_POPULAR_MOVIES,
+  FETCH_TOP_RATED_MOVIES,
+  FETCH_UPCOMING_MOVIES
+} from './types'
 
 export const fetchPopularMovies = () => async dispatch => {
   const response = await movieApi.get(
@@ -6,7 +11,7 @@ export const fetchPopularMovies = () => async dispatch => {
   );
   // console.log(response.data.results);
   dispatch({
-    type: "FETCH_POPULAR_MOVIES",
+    type: FETCH_POPULAR_MOVIES,
     payload: response.data.results
   });
 };
@@ -18,7 +23,7 @@ export const fetchUpcomingMovies = () => async dispatch => {
   // console.log(response.data.results);
 
   dispatch({
-    type: "FETCH_UPCOMING_MOVIES",
+    type: FETCH_UPCOMING_MOVIES,
     payload: response.data.results
   });
 };
@@ -27,7 +32,7 @@ export const fetchUpcomingMovies = () => async dispatch => {
 export const fetchTopRatedMovies = () => async dispatch => {
   const response = await movieApi.get('/top_rated?api_key=5fb27ee2362c619dc78fe12b56540c4e')
   dispatch({
-    type: 'FETCH_TOP_RATED_MOVIES',
+    type: FETCH_TOP_RATED_MOVIES,
     payload: response.data.results
   });
 };
