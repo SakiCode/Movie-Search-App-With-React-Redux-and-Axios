@@ -3,26 +3,34 @@ import React from "react";
 import UpcomingMovies from "./Upcoming";
 import TopratedMovies from "./TopRated";
 
+import "../assets/css/moviesList.scss";
 class MoviesList extends React.Component {
-  state = { topRated: true };
+  state = { topRated: true, active: true, unactive: false };
 
   onClickTopRated = () => {
-    this.setState({ topRated: true });
+    this.setState({ topRated: true, active: true, unactive: false });
   };
+
   onClickUpcoming = () => {
-    this.setState({ topRated: false });
+    this.setState({ topRated: false, active: false, unactive: false });
   };
 
   render() {
+    let active = this.state.active ? "active" : "unactive";
+    let unactive = this.state.active ? "unactive" : "active";
     return (
       <>
-        <button onClick={this.onClickUpcoming} className="btn btn-default">
-          Upcoming
-        </button>
-        <button onClick={this.onClickTopRated} className="btn btn-default">
-          Toprated
-        </button>
-        {this.state.topRated ? <TopratedMovies /> : <UpcomingMovies />}
+        <div className="container text-center">
+          <button onClick={this.onClickTopRated} className={active}>
+            Top Rated
+          </button>
+          <button onClick={this.onClickUpcoming} className={unactive}>
+            Upcoming
+          </button>
+          <div className="movie-list mt-5">
+            {this.state.topRated ? <TopratedMovies /> : <UpcomingMovies />}
+          </div>
+        </div>
       </>
     );
   }
