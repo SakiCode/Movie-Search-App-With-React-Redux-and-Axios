@@ -2,7 +2,8 @@ import movieApi from "../apis/movieapi";
 import {
   FETCH_POPULAR_MOVIES,
   FETCH_TOP_RATED_MOVIES,
-  FETCH_UPCOMING_MOVIES
+  FETCH_UPCOMING_MOVIES,
+  FETCH_MOVIE_DETAILS
 } from './types'
 
 export const fetchPopularMovies = () => async dispatch => {
@@ -20,8 +21,6 @@ export const fetchUpcomingMovies = () => async dispatch => {
   const response = await movieApi.get(
     `/upcoming?api_key=5fb27ee2362c619dc78fe12b56540c4e`
   );
-  // console.log(response.data.results);
-
   dispatch({
     type: FETCH_UPCOMING_MOVIES,
     payload: response.data.results
@@ -36,3 +35,11 @@ export const fetchTopRatedMovies = () => async dispatch => {
     payload: response.data.results
   });
 };
+
+export const fetchMovieDetails = (movie_id) => async dispatch => {
+  const response = await movieApi.get(`/movie/${movie_id}?api_key=5fb27ee2362c619dc78fe12b56540c4`)
+  dispatch({
+    type: FETCH_MOVIE_DETAILS,
+    payload: response.data.response
+  })
+}
