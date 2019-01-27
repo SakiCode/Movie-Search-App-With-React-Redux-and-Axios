@@ -1,19 +1,29 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
 import UpcomingMovies from "./Upcoming";
 import TopratedMovies from "./TopRated";
-import MovieDetails from "./MovieDetails";
 
 import "../assets/css/moviesList.scss";
 class MoviesList extends React.Component {
-  state = { topRated: true, active: true, unactive: false };
+  state = {
+    topRated: true,
+    active: true,
+    unactive: false
+  };
 
   onClickTopRated = () => {
-    this.setState({ topRated: true, active: true, unactive: false });
+    this.setState({
+      topRated: true,
+      active: true,
+      unactive: false
+    });
   };
 
   onClickUpcoming = () => {
-    this.setState({ topRated: false, active: false, unactive: false });
+    this.setState({
+      topRated: false,
+      active: false,
+      unactive: false
+    });
   };
 
   render() {
@@ -23,21 +33,16 @@ class MoviesList extends React.Component {
       <>
         <div className="container text-center">
           <button onClick={this.onClickTopRated} className={active}>
-            Top Rated
-          </button>
+            Top Rated{" "}
+          </button>{" "}
           <button onClick={this.onClickUpcoming} className={unactive}>
-            Upcoming
-          </button>
-
+            Upcoming{" "}
+          </button>{" "}
           <div className="movie-list mt-5">
-            <BrowserRouter>
-              <Switch>
-                {this.state.topRated ? <TopratedMovies /> : <UpcomingMovies />}
-                <Route path={"/details"} component={MovieDetails} />
-              </Switch>
-            </BrowserRouter>
-          </div>
-        </div>
+            {" "}
+            {this.state.topRated ? <TopratedMovies /> : <UpcomingMovies />}{" "}
+          </div>{" "}
+        </div>{" "}
       </>
     );
   }

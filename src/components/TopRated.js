@@ -1,10 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { fetchTopRatedMovies } from "../actions";
 import "../assets/css/moviesList.scss";
-import MovieDetails from "../components/MovieDetails";
 
 class TopRatedMovies extends React.Component {
   componentDidMount = async () => {

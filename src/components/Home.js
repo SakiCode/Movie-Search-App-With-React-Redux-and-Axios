@@ -1,8 +1,7 @@
 import React from "react";
 import Slideshow from "./Slideshow";
 import MoviesList from "./MoviesList";
-import "../assets/css/app.scss";
-const App = () => {
+const Home = () => {
   return (
     <>
       <Slideshow />
@@ -11,4 +10,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
