@@ -33,16 +33,15 @@ class MoviesList extends React.Component {
       <>
         <div className="container text-center">
           <button onClick={this.onClickTopRated} className={active}>
-            Top Rated{" "}
-          </button>{" "}
+            Top Rated
+          </button>
           <button onClick={this.onClickUpcoming} className={unactive}>
-            Upcoming{" "}
-          </button>{" "}
+            Upcoming
+          </button>
           <div className="movie-list mt-5">
-            {" "}
-            {this.state.topRated ? <TopratedMovies /> : <UpcomingMovies />}{" "}
-          </div>{" "}
-        </div>{" "}
+            {this.state.topRated ? <TopratedMovies /> : <UpcomingMovies />}
+          </div>
+        </div>
       </>
     );
   }

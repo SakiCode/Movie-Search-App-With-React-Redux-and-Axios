@@ -15,17 +15,22 @@
     height: 90vh;
 }
 
-.description {
+.movie-description {
     display: flex;
-    justify-content: end;
     width: 100%;
+    z-index: 100;
 
     .description-details {
         display: flex;
+        justify-content: flex-start;
         align-items: flex-end;
 
-        .description-text {
+        .movie-description-text {
             margin-left: 50px;
+        }
+
+        em {
+            font-size: 1.3rem
         }
     }
 

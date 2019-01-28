@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
 import { fetchUpcomingMovies } from "../actions";
 
 import "../assets/css/moviesList.scss";
@@ -29,10 +31,14 @@ class UpcomingMovies extends React.Component {
                 key={movie.id}
               >
                 <div className="card-img-top">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w154${movie.poster_path}`}
-                    alt=""
-                  />
+                  <Link to={`/details/${movie.id}`}>
+                    <img
+                      src={`https://image.tmdb.org/t/p/w154${
+                        movie.poster_path
+                      }`}
+                      alt={movie.title}
+                    />
+                  </Link>
                   <span> ☆{movie.vote_average} </span>
                 </div>
                 <div className="card-title">

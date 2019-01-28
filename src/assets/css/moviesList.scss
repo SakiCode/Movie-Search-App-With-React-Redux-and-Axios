@@ -26,6 +26,7 @@ h2 {
 
 .movies-container {
   display: flex;
+  flex: 0 0 20%;
   flex-wrap: wrap;
   justify-content: center;
   color: white
