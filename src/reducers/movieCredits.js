@@ -1,7 +1,8 @@
-import { FETCH_MOVIE_CREDITS } from "../actions/types";
+import {
+  FETCH_MOVIE_CREDITS
+} from "../actions/types";
 
-const initialState = {};
-export default (state = initialState, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case FETCH_MOVIE_CREDITS:
       return action.payload;
