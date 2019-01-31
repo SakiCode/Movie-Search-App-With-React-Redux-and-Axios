@@ -6,6 +6,8 @@ import popularMoviesReducer from "./popularMoviesReducer";
 import topRatedMoviesReducer from "./topRatedMoviesReducer";
 import movieDetails from './movieDetails';
 import movieCredits from './movieCredits';
+import movieTrailer from './movieTrailer';
+
 
 export default combineReducers({
   slideshow: popularMoviesReducer,
@@ -13,4 +15,5 @@ export default combineReducers({
   toprated: topRatedMoviesReducer,
   movieDetails: movieDetails,
   movieCredits: movieCredits,
+  movieTrailer: movieTrailer
 });

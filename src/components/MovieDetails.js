@@ -1,6 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchMovieDetails, fetchMovieCredits } from "../actions";
+import {
+  fetchMovieDetails,
+  fetchMovieCredits,
+  fetchMovieTrailer
+} from "../actions";
+import MovieTrailer from "./MovieTrailer";
 import "../assets/css/details.scss";
 
 class MovieDetails extends React.Component {
@@ -8,6 +13,7 @@ class MovieDetails extends React.Component {
     const movie_id = this.props.match.params.id;
     this.props.fetchMovieDetails(movie_id);
     this.props.fetchMovieCredits(movie_id);
+    this.props.fetchMovieTrailer(movie_id);
   };
 
   render() {
@@ -34,29 +40,41 @@ class MovieDetails extends React.Component {
               <div className="movie-description-text">
                 <span>{details.release_date}</span>
                 <h1>{details.original_title}</h1>
+                <p> ☆ {details.vote_average} </p>
                 <em>" {details.tagline} "</em>
               </div>
             </div>
           </div>
         </div>
-        <div className="actors container">
+        <div className="container">
           <h3>{details.overview}</h3>
-          <div className="row">
-            {this.props.movieCredits.map(actor => {
-              return (
-                <div className="col" key="cast_id">
-                  <img
-                    className="side-image"
-                    src={`https://image.tmdb.org/t/p/w154/${
-                      actor.profile_path
-                    }`}
-                    alt={details.original_title}
-                  />
-                  <p>{actor.name}</p>
-                </div>
-              );
-            })}
+          <div className="actors">
+            <h2>Actors</h2>
+            <div className="row">
+              {this.props.movieCredits.map((actor, i) => {
+                if (i <= 9) {
+                  return (
+                    <div className="col" key={`${actor},${i}`}>
+                      <img
+                        className="side-image"
+                        src={`https://image.tmdb.org/t/p/w154/${
+                          actor.profile_path
+                        }`}
+                        alt={details.original_title}
+                      />
+                      <p>{actor.name}</p>
+                    </div>
+                  );
+                } else {
+                  return this.props.state;
+                }
+              })}
+            </div>
           </div>
+        </div>
+        <div className="container">
+          <h2>Trailers</h2>
+          <MovieTrailer />
         </div>
       </>
     );
@@ -65,10 +83,11 @@ class MovieDetails extends React.Component {
 const mapStateToProps = state => {
   return {
     movieDetails: state.movieDetails,
-    movieCredits: state.movieCredits
+    movieCredits: state.movieCredits,
+    movieTrailer: state.movieTrailer
   };
 };
 export default connect(
   mapStateToProps,
-  { fetchMovieDetails, fetchMovieCredits }
+  { fetchMovieDetails, fetchMovieCredits, fetchMovieTrailer }
 )(MovieDetails);
