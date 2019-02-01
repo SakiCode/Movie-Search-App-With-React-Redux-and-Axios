@@ -72,7 +72,7 @@ class MovieDetails extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className=" text-center mt-5">
           <h2>Trailers</h2>
           <MovieTrailer />
         </div>
