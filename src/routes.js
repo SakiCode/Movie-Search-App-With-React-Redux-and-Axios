@@ -8,7 +8,6 @@ class Routes extends React.Component {
     return (
       <>
         <Switch>
-          <Route path="/pera" render={() => <div>Pera</div>} />
           <Route path={"/details/:id"} exact component={MovieDetails} />
           <Route path={"/"} component={Home} />
         </Switch>

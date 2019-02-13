@@ -7,6 +7,7 @@ import topRatedMoviesReducer from "./topRatedMoviesReducer";
 import movieDetails from './movieDetails';
 import movieCredits from './movieCredits';
 import movieTrailer from './movieTrailer';
+import movieSearch from './movieSearch';
 
 
 export default combineReducers({
@@ -15,5 +16,6 @@ export default combineReducers({
   toprated: topRatedMoviesReducer,
   movieDetails: movieDetails,
   movieCredits: movieCredits,
-  movieTrailer: movieTrailer
+  movieTrailer: movieTrailer,
+  movieSearch: movieSearch,
 });

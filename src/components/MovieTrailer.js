@@ -5,9 +5,6 @@ import { fetchMovieTrailer } from "../actions";
 import "../assets/css/trailer.scss";
 class MovieTrailer extends React.Component {
   render() {
-    {
-      console.log(this.props);
-    }
     return (
       <div className="trailer">
         {this.props.movieTrailer.map(trailer => {

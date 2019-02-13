@@ -6,6 +6,7 @@ import {
   FETCH_MOVIE_DETAILS,
   FETCH_MOVIE_CREDITS,
   FETCH_MOVIE_TRAILER,
+  FETCH_MOVIE_SEARCH,
 } from './types'
 
 export const fetchPopularMovies = () => async dispatch => {
@@ -57,6 +58,15 @@ export const fetchMovieTrailer = (movie_id) => async dispatch => {
   const response = await movieApi.get(`/movie/${movie_id}/videos?api_key=5fb27ee2362c619dc78fe12b56540c4e`)
   dispatch({
     type: FETCH_MOVIE_TRAILER,
+    payload: response.data.results
+  })
+}
+
+export const fetchMovieSearch = (movie_title) => async dispatch => {
+  const response = await movieApi.get(`/search/movie?api_key=5fb27ee2362c619dc78fe12b56540c4e&query=${movie_title}`)
+  console.log(response);
+  dispatch({
+    type: FETCH_MOVIE_SEARCH,
     payload: response.data.results
   })
 }

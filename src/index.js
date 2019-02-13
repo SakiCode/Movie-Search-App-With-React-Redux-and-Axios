@@ -8,6 +8,7 @@ import { Router } from "react-router-dom";
 import reducers from "./reducers";
 import Routes from "./routes";
 import "./assets/css/app.scss";
+
 const store = createStore(reducers, applyMiddleware(thunk));
 const history = createHistory();
 ReactDOM.render(
