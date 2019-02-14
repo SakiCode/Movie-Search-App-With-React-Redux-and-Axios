@@ -11,8 +11,6 @@ class Slideshow extends React.Component {
   };
 
   render() {
-    // console.log(this.props.slideshow);
-
     (() => {
       const sliderEl = document.querySelectorAll(".swiper-container");
       if (!sliderEl) {

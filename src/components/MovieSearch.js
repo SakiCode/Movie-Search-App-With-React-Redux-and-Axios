@@ -18,17 +18,19 @@ class movieSearch extends React.Component {
       const movieRow = <MovieRow key={movie.id} movie={movie} />;
       movieRows.push(movieRow);
     });
-
-    this.setState({ rows: movieRows });
+    if (movie_title !== "") {
+      this.setState({ rows: movieRows });
+    } else {
+      this.setState({ rows: "" });
+    }
   }
   render() {
     return (
       <div className="container search">
         <input
           onChange={this.searchChangeHandler.bind(this)}
-          placeholder="Enter search term"
+          placeholder="Search for movie"
         />
-
         {this.state.rows}
       </div>
     );

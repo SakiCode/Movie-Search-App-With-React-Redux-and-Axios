@@ -1,8 +1,8 @@
 import React from "react";
-
 class MovieRow extends React.Component {
   viewMovie() {
-    const url = "https://www.themoviedb.org/movie/" + this.props.movie.id;
+    const movieId = this.props.movie.id;
+    const url = `/details/${movieId}`;
     window.location.href = url;
   }
 

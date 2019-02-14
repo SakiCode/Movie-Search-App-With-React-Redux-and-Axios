@@ -2,57 +2,39 @@
     background-color: #000;
     display: flex;
     color: #fff;
-    padding-left: 16px
-}
-
-.App {
-    text-align: center;
+    padding-left: 16px;
 }
 
 .search {
-    padding: 10px
+    padding: 10px;
+    max-width: 500px;
+
 }
 
 input {
     background-color: rgb(58, 41, 68);
     border: none;
     color: #fff;
+    border-radius: 10px;
+    width: 400px;
 
-    :focus {
-        border: none
-    }
+
 }
 
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 80px;
+::placeholder {
+    color: #fff;
+    padding: 20px
 }
+
 
 .App-header {
-    background-color: #222;
+    background: linear-gradient(to bottom, rgba(11, 16, 33, 1) 0%, rgba(14, 20, 40, 1) 51%, rgba(14, 20, 40, 1) 100%) no-repeat;
     height: 150px;
     padding: 20px;
     color: white;
-}
 
-.App-title {
-    font-size: 1.5em;
-}
-
-.App-intro {
-    font-size: large;
 }
 
 table {
     margin-top: 20px;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
 }
