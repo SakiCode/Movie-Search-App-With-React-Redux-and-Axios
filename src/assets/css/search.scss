@@ -1,14 +1,16 @@
-.titleBar {
-    background-color: #000;
-    display: flex;
-    color: #fff;
-    padding-left: 16px;
+.search {
+    padding: 20px;
 }
 
-.search {
-    padding: 10px;
-    max-width: 500px;
 
+.col {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.movie-details {
+    margin-left: 20px;
 }
 
 input {
@@ -17,8 +19,6 @@ input {
     color: #fff;
     border-radius: 10px;
     width: 400px;
-
-
 }
 
 ::placeholder {
@@ -26,15 +26,15 @@ input {
     padding: 20px
 }
 
-
-.App-header {
-    background: linear-gradient(to bottom, rgba(11, 16, 33, 1) 0%, rgba(14, 20, 40, 1) 51%, rgba(14, 20, 40, 1) 100%) no-repeat;
-    height: 150px;
-    padding: 20px;
+.btn-about {
+    border: 1px solid white;
+    background: transparent;
+    margin-left: 10px;
+    border-radius: 10px;
     color: white;
-
 }
 
-table {
-    margin-top: 20px;
+.fas {
+    font-size: .9rem;
+    margin-left: 10px;
 }

@@ -64,7 +64,6 @@ export const fetchMovieTrailer = (movie_id) => async dispatch => {
 
 export const fetchMovieSearch = (movie_title) => async dispatch => {
   const response = await movieApi.get(`/search/movie?api_key=5fb27ee2362c619dc78fe12b56540c4e&query=${movie_title}`)
-  console.log(response);
   dispatch({
     type: FETCH_MOVIE_SEARCH,
     payload: response.data.results

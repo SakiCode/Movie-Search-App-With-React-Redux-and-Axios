@@ -8,7 +8,6 @@ class movieSearch extends React.Component {
   state = { movie_title: "" };
 
   searchChangeHandler(event) {
-    console.log(event.target.value);
     const movie_title = event.target.value;
     this.props.fetchMovieSearch(movie_title);
     var movieRows = [];
@@ -26,12 +25,12 @@ class movieSearch extends React.Component {
   }
   render() {
     return (
-      <div className="container search">
+      <div className="search">
         <input
           onChange={this.searchChangeHandler.bind(this)}
           placeholder="Search for movie"
         />
-        {this.state.rows}
+        <div className="search-results">{this.state.rows}</div>
       </div>
     );
   }

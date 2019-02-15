@@ -8,24 +8,32 @@ class MovieRow extends React.Component {
 
   render() {
     return (
-      <table key={this.props.movie.id}>
-        <tbody>
-          <tr>
-            <td>
+      <div key={this.props.movie.id}>
+        <div className="container">
+          <div className="col">
+            <div className="movie-poster">
               <img alt="poster" width="120" src={this.props.movie.poster_src} />
-            </td>
-            <td style={{ padding: 20 }}>
+            </div>
+
+            <div className="movie-details">
               <h3>{this.props.movie.title}</h3>
               <p>{this.props.movie.overview}</p>
-              <input
-                type="button"
-                onClick={this.viewMovie.bind(this)}
-                value="View"
-              />
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <div>
+                <button
+                  className="btn btn-about"
+                  type="button"
+                  onClick={this.viewMovie.bind(this)}
+                  value="View"
+                >
+                  Read More
+                  <i className="fas fa-info-circle" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+      </div>
     );
   }
 }
