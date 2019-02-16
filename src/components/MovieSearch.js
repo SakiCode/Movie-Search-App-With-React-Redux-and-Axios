@@ -7,13 +7,13 @@ import MovieRow from "./MovieSearchRow";
 class movieSearch extends React.Component {
   state = { movie_title: "" };
 
-  searchChangeHandler(event) {
+  searchChangeHandler = event => {
     const movie_title = event.target.value;
     this.props.fetchMovieSearch(movie_title);
     var movieRows = [];
 
     this.props.movieSearch.map(movie => {
-      movie.poster_src = "https://image.tmdb.org/t/p/w185" + movie.poster_path;
+      movie.poster_src = `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
       const movieRow = <MovieRow key={movie.id} movie={movie} />;
       movieRows.push(movieRow);
     });
@@ -22,16 +22,37 @@ class movieSearch extends React.Component {
     } else {
       this.setState({ rows: "" });
     }
-  }
+  };
   render() {
     return (
-      <div className="search">
-        <input
-          onChange={this.searchChangeHandler.bind(this)}
-          placeholder="Search for movie"
-        />
-        <div className="search-results">{this.state.rows}</div>
-      </div>
+      <>
+        <div className="search">
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "baseline" }}>
+              <img
+                style={{ height: 50, marginLeft: 10 }}
+                src={require("../assets/img/popcorn.png")}
+                alt="movie'n'chill"
+              />
+              <h3>Movie'n'Chill</h3>
+            </div>
+
+            <input
+              value={this.movie_title}
+              onChange={this.searchChangeHandler}
+              placeholder="Search for movie"
+            />
+          </div>
+
+          <div className="search-results">{this.state.rows}</div>
+        </div>
+      </>
     );
   }
 }

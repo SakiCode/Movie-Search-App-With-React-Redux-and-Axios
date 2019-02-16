@@ -53,6 +53,13 @@
 .actors {
     text-align: center;
 
+    .actor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     img {
         border-radius: 5%;
         max-height: 200px;

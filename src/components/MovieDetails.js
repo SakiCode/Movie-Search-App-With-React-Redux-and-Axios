@@ -6,6 +6,7 @@ import {
   fetchMovieTrailer
 } from "../actions";
 import MovieTrailer from "./MovieTrailer";
+import Footer from "./Footer";
 import "../assets/css/details.scss";
 
 class MovieDetails extends React.Component {
@@ -61,7 +62,7 @@ class MovieDetails extends React.Component {
               {this.props.movieCredits.map((actor, i) => {
                 if (i <= 9) {
                   return (
-                    <div className="col" key={`${actor},${i}`}>
+                    <div className="col actor" key={`${actor},${i}`}>
                       <img
                         className="side-image"
                         src={`https://image.tmdb.org/t/p/w154/${
@@ -83,6 +84,7 @@ class MovieDetails extends React.Component {
           <h2>Trailers</h2>
           <MovieTrailer />
         </div>
+        <Footer />
       </>
     );
   }

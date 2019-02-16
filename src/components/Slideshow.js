@@ -2,14 +2,18 @@ import React from "react";
 import { fetchPopularMovies } from "../actions";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+
 import Swiper from "swiper";
 import "../assets/css/slideshow.scss";
 
 class Slideshow extends React.Component {
+  state = { isOpen: false };
   componentDidMount = async () => {
     this.props.fetchPopularMovies();
   };
-
+  openModal() {
+    this.setState({ isOpen: true });
+  }
   render() {
     (() => {
       const sliderEl = document.querySelectorAll(".swiper-container");
@@ -55,9 +59,6 @@ class Slideshow extends React.Component {
                       Rating: ☆ {movie.vote_average}
                     </p>
                     <div className="description-buttons">
-                      <button className="btn btn-trailer">
-                        Watch Trailer <i className="fas fa-play" />
-                      </button>
                       <Link to={`/details/${movie.id}`}>
                         <button className="btn btn-about">
                           Read More
