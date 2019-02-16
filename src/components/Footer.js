@@ -8,7 +8,7 @@ class Footer extends React.Component {
           Created by Niklola Seke. Powered by{" "}
           <img
             style={{ height: 50 }}
-            src={require("../assets/img/moviedblogo.png")}
+            src={require("../assets/img/moviedblogo.svg")}
             alt="moviedblogo"
           />
         </p>

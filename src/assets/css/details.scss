@@ -3,7 +3,16 @@
     width: 100%;
     position: relative;
     display: flex;
-    justify-content: flex-end
+    justify-content: flex-end;
+
+    button {
+        height: 50px;
+        width: 50px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 100;
+    }
 }
 
 .overlay {

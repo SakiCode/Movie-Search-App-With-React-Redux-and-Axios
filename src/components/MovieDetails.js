@@ -20,7 +20,6 @@ class MovieDetails extends React.Component {
     const details = this.props.movieDetails;
     return (
       <>
-        {console.log(this.props)}
         <div
           className="jumbotron"
           style={{
@@ -30,6 +29,14 @@ class MovieDetails extends React.Component {
           }}
         >
           <div className="overlay" />
+          <button>
+            <a href="/">
+              <img
+                src={require("../assets/img/left-arrow.svg")}
+                alt="previous button"
+              />
+            </a>
+          </button>
           <div className="movie-description container">
             <div className="description-details">
               <img
