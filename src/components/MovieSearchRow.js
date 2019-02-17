@@ -1,12 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 class MovieRow extends React.Component {
-  viewMovie() {
-    const movieId = this.props.movie.id;
-    const url = `/details/${movieId}`;
-    window.location.href = url;
-  }
+  viewMovie() {}
 
   render() {
+    const movieId = this.props.movie.id;
+
     return (
       <div key={this.props.movie.id}>
         <div className="container">
@@ -19,15 +19,17 @@ class MovieRow extends React.Component {
               <h3>{this.props.movie.title}</h3>
               <p>{this.props.movie.overview}</p>
               <div>
-                <button
-                  className="btn btn-about"
-                  type="button"
-                  onClick={this.viewMovie.bind(this)}
-                  value="View"
-                >
-                  Read More
-                  <i className="fas fa-info-circle" />
-                </button>
+                <Link to={`/movienchill/details/${movieId}`}>
+                  <button
+                    className="btn btn-about"
+                    type="button"
+                    onClick={this.viewMovie.bind(this)}
+                    value="View"
+                  >
+                    Read More
+                    <i className="fas fa-info-circle" />
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+
 import {
   fetchMovieDetails,
   fetchMovieCredits,
@@ -30,14 +32,15 @@ class MovieDetails extends React.Component {
           }}
         >
           <div className="overlay" />
-          <button>
-            <a href="/">
+          <Link to="/movienchill/">
+            <button>
               <img
                 src={require("../assets/img/left-arrow.svg")}
                 alt="previous button"
               />
-            </a>
-          </button>
+            </button>
+          </Link>
+
           <div className="movie-description container">
             <div className="description-details">
               <img

@@ -5,14 +5,18 @@
     display: flex;
     justify-content: flex-end;
 
-    button {
-        height: 50px;
-        width: 50px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
+    a {
         z-index: 100;
+
+        button {
+            height: 50px;
+            width: 50px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
     }
+
 }
 
 .overlay {

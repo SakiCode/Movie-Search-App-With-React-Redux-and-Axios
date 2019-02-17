@@ -59,7 +59,7 @@ class Slideshow extends React.Component {
                       Rating: ☆ {movie.vote_average}
                     </p>
                     <div className="description-buttons">
-                      <Link to={`/details/${movie.id}`}>
+                      <Link to={`/movienchill/details/${movie.id}`}>
                         <button className="btn btn-about">
                           Read More
                           <i className="fas fa-info-circle" />

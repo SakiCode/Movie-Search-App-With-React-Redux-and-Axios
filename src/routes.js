@@ -8,8 +8,12 @@ class Routes extends React.Component {
     return (
       <>
         <Switch>
-          <Route path={"/details/:id"} exact component={MovieDetails} />
-          <Route path={"/"} component={Home} />
+          <Route
+            path={"/movienchill/details/:id"}
+            exact
+            component={MovieDetails}
+          />
+          <Route path={"/movienchill"} component={Home} />
         </Switch>
       </>
     );
