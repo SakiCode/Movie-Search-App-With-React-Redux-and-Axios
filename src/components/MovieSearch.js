@@ -27,13 +27,7 @@ class movieSearch extends React.Component {
     return (
       <>
         <div className="search">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center"
-            }}
-          >
+          <div className="search-elements">
             <div style={{ display: "flex", alignItems: "baseline" }}>
               <img
                 style={{ height: 50, marginLeft: 10 }}
